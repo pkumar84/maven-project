@@ -4,11 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building First time and Hello world to jenkins..',
+                echo 'Building First time and Hello world to jenkins..'
                 sh 'mvn clean package'
             }
             post {
-                echo "Now Archiving..."
+                echo 'Now Archiving...'
+                achiveArtifacts artifacts: '**/target/*war'
             }
         }
 
