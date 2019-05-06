@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building First time and Hello world to jenkins..'
-                sh 'mvn clean package'
+                sh 'mvn -DskipTests clean package'
             }
             post {
                 success {
